@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :destroy, :omniauth]
+  skip_before_action :authorized, only: %i[new create destroy omniauth]
 
   def new; end
 
@@ -20,8 +22,10 @@ class SessionsController < ApplicationController
   end
 
   def omniauth
+    # I Tried not saving the user at all but then it makes it hard to determine
+    # if it's an admin that should see the complaints or a regular user that can't
     @user = User.from_omniauth(auth)
-    @user.save
+    @user.save(touch: false) # don't update the updated_at timestamp
     session[:user_id] = @user.id
     redirect_to root_url, notice: 'Validated'
   end

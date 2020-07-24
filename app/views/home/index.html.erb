@@ -1,0 +1,6 @@
+<div class="text-center home">
+<h1>Welcome</h1>
+<% if current_user && !current_user.admin? %>
+  <%= link_to "New Complaint", new_complaint_path, class: 'btn btn-primary btn-lg active', role: "button", aria_pressed: true %>
+<% end %>
+</div>

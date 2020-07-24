@@ -1,0 +1,22 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+    <ul class="nav nav-fill">
+      <% if logged_in? %>
+          <li class="nav-item"><%= link_to "New Complaint", new_complaint_path, class: 'nav-link' %></li>
+        <% if current_user.admin? %>
+            <li class="nav-item"><%= link_to "Complaint List", complaints_path, class: 'nav-link' %></li>
+        <% end %>
+      <% end %>
+    </ul>
+    <% flash.each do |message_type, message| %>
+        <div class="alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <ul class="nav">      
+      <% if logged_in? %>
+          <!--<li class="nav-item">Logged in as <%= current_user.email %>.</li> -->
+          <li class="nav-item"><%= link_to "Log Out", logout_path, class: 'nav-link' %></li>
+      <% else %>
+          <li class="nav-item"><%= link_to "Log In", login_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "Validate with Google", '/auth/google_oauth2', class: 'nav-link' %></li>
+      <% end %>
+    </ul>
+</nav>

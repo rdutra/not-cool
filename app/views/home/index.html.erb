@@ -1,6 +1,13 @@
 <div class="text-center home">
 <h1>Welcome</h1>
 <% if current_user && !current_user.admin? %>
+  <p>
+    Disclaimer: 
+
+    Complaints registered here are completely anonymous. We Validate your account with google to make sure you have a 
+    tarmac.io account but do not associate your acccount with any complaint. Complaints submitted here are
+    emailed to our admin users and logged to a table that only users with admin privileges can see.
+  </p>
   <%= link_to "New Complaint", new_complaint_path, class: 'btn btn-primary btn-lg active', role: "button", aria_pressed: true %>
 <% end %>
 </div>

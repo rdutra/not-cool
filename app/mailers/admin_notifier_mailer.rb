@@ -3,7 +3,7 @@ class AdminNotifierMailer < ApplicationMailer
 
   def send_complaint_notifications(complaint)
     @complaint = complaint
-    mail(to: User.where(admin: true).map(&:email),
+    mail(to: User.active_admins.map(&:email),
          subject: 'New complaint received')
   end
 end

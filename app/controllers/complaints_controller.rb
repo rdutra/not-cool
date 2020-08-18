@@ -29,7 +29,11 @@ class ComplaintsController < ApplicationController
 
     respond_to do |format|
       if @complaint.save
-        AdminNotifierMailer.send_complaint_notifications(@complaint).deliver_now
+        begin
+          AdminNotifierMailer.send_complaint_notifications(@complaint).deliver_now
+        rescue StandardError => e
+          flash.now[:alert] = e.message
+        end
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
         format.json { render :show, status: :created, location: @complaint }
       else

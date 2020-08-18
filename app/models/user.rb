@@ -16,4 +16,8 @@ class User < ApplicationRecord
       user.password = SecureRandom.hex
     end
   end
+
+  def self.active_admins
+    where(admin: true).where(email: ENV['VALID_ADMIN_EMAILS'].split(','))
+  end
 end

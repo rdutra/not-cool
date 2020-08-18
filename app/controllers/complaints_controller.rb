@@ -29,6 +29,7 @@ class ComplaintsController < ApplicationController
 
     respond_to do |format|
       if @complaint.save
+        AdminNotifierMailer.send_complaint_notifications(@complaint).deliver_now
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
         format.json { render :show, status: :created, location: @complaint }
       else
@@ -63,13 +64,14 @@ class ComplaintsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_complaint
-      @complaint = Complaint.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def complaint_params
-      params.require(:complaint).permit(:subject, :body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_complaint
+    @complaint = Complaint.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def complaint_params
+    params.require(:complaint).permit(:subject, :body)
+  end
 end

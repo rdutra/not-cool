@@ -17,9 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'dotenv-rails'
+gem 'mailgun-ruby'
+gem 'newrelic_rpm'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'mailgun-ruby'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

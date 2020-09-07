@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1>A new complaint has been logged!</h1>
-    <p><%= @complaint.body %></p>
+    <p>Date: <%= @complaint.date%>
+    <p>Where: <%= @complaint.location%>
+    <p>Who: <%= @complaint.offender%>
+    <p>What: <%= @complaint.nature%>
+    <p>Body: <%= @complaint.body %></p>
   </body>
 </html>

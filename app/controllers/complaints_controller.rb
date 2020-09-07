@@ -5,7 +5,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints
   # GET /complaints.json
   def index
-    @complaints = Complaint.all
+    @complaints = Complaint.order('created_at')
   end
 
   # GET /complaints/1

@@ -11,17 +11,53 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :subject %>
-    <%= form.text_field :subject, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :body %>
-    <%= form.text_area :body, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create Complaint", class: 'btn btn-primary' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :date %>
+          <%= form.text_field :date, type: 'date', :class => 'datepicker' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :Where %>
+          <%= form.text_field :location, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :Who %>
+          <%= form.text_field :offender, class: 'form-control' %>
+        </div>
+      </div class="col-md-6">
+      <div class="col-md-6">
+        <div class="form-group">
+        <%= form.label :What %>
+        <%= form.text_field :nature, class: 'form-control' %>
+      </div>
+      </div class="col-md-6">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :subject %>
+          <%= form.text_field :subject, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= form.label :body %>
+        <%= form.text_area :body, size: "10x10", class: 'form-control' %>
+      </div>
+    </div>
+    </div>
+     <div class="actions">
+        <%= form.submit "Create Complaint", class: 'btn btn-primary' %>
+      </div>
   </div>
 <% end %>

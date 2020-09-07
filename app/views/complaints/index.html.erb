@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Subject</th>
       <th scope="col">Body</th>
+      <th scope="col">Nature</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= complaint.subject %></td>
         <td><%= complaint.body %></td>
+        <td><%= complaint.nature %></td>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

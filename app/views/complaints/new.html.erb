@@ -1,5 +1,10 @@
-<h1>New Complaint</h1>
+<h1 style="text-align: center">New Complaint</h1>
+<p>
+  Only the "Body" field is required. The other fields are there to help you be more concise with your complaint.
+</p>
+<p>
+  Complaints are completely anonymous and will trigger an email to the people in charge of investigating. Make
+  sure you add enough data cause we won't be able to reach you for followup information :)
+</p>
 
 <%= render 'form', complaint: @complaint %>
-
-<%= link_to 'Back', complaints_path %>

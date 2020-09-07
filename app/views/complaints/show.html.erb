@@ -1,6 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>When:</strong>
+  <%= @complaint.date %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @complaint.location %>
+</p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @complaint.offender %>
+</p>
+
+<p>
+  <strong>What:</strong>
+  <%= @complaint.nature %>
+</p>
+
+<p>
   <strong>Subject:</strong>
   <%= @complaint.subject %>
 </p>

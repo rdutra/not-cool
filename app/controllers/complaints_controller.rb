@@ -76,6 +76,6 @@ class ComplaintsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def complaint_params
-    params.require(:complaint).permit(:subject, :body)
+    params.require(:complaint).permit(:subject, :body, :date, :location, :offender, :nature)
   end
 end

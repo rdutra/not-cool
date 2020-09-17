@@ -15,28 +15,22 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :date %>
+          <%= form.label 'When did this happen?' %>
           <%= form.text_field :date, type: 'date', :class => 'datepicker' %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :Where %>
-          <%= form.text_field :location, class: 'form-control' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :Who %>
+          <%= form.label 'Who is involved?' %>
           <%= form.text_field :offender, class: 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :What %>
-          <%= form.text_field :nature, class: 'form-control' %>
+           <%= form.label 'Where did this happen?' %>
+          <%= form.text_field :location, class: 'form-control' %>
         </div>
       </div>
     </div>

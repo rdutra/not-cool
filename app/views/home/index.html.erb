@@ -2,11 +2,13 @@
 <h1>Welcome</h1>
 <% if current_user && !current_user.admin? %>
   <p>
-    Disclaimer: 
-
-    Complaints registered here are completely anonymous. We Validate your account with google to make sure you have a 
-    tarmac.io account but do not associate your acccount with any complaint. Complaints submitted here are
-    emailed to our admin users and logged to a table that only users with admin privileges can see.
+    Hi there, this is Tarmac’s whistleblower channel, a tool we all can use to raise our voice and report any situation that may have caused you or anyone else discomfort, or that may look ethically challenged.
+  </p>
+  <p>
+    Please go ahead and complete the fields below, trying to provide as much information as possible so we can better understand the nature of the issue and act accordingly. Keep in mind your name will not be recorded and that all the information provided will be treated with strict confidentiality. These complaints are completely anonymous and will trigger an email to the HR team, who will take care of moving this in the right direction. Make sure you add enough data since we won't be able to reach you for followup information :)
+  </p>
+  <p>
+    Finally, note that only the "Body" field is required; all others are there to help you be more concise with your complaint.
   </p>
   <%= link_to "New Complaint", new_complaint_path, class: 'btn btn-primary btn-lg active', role: "button", aria_pressed: true %>
 <% end %>
